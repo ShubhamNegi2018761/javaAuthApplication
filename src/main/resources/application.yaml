@@ -1,0 +1,45 @@
+spring:
+  application:
+    name: auth-app
+  datasource:
+    url: jdbc:mysql://localhost:3306/auth
+    username: root
+    password: Negi#440
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        format_sql: true
+    show-sql: true
+
+server:
+  port: 8082
+
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+
+security:
+  jwt:
+    secret: ${JWT_SECRET:sadsv;fvfvsdvsvdsvdsjhgjhgjhbjhbhjbhjvkhjvkhvhkvkhgvkhvkhjvhjvkjhvkhjvkjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjhljlknmnjknvdlvknlkn}
+    issuer: ${JWT_ISSUER:api.substring.com}
+    access-ttl-seconds: ${JWT_ACCESS_TTL_SECOND:3600}
+    refresh-ttl-seconds: ${JWT_REFRESH_TTL_SECONDS:86400}
+    refresh-token-cookie-name: ${JWT_REFRESH_COOKIE_NAME:refreshToken}
+    cookie-secure: ${JWT_COOKIE_SECURE:true}
+    cookie-http-only: ${JWT_COOKIE_HTTP_ONLY:true}
+    cookie-same-site: ${JWT_COOKIE_SAME_SITE:lax}
+
+
+
+#configuratioin
+#database configuration
+
+
+
+#email configuration
